@@ -1,0 +1,6 @@
+framework module Pods_HW_Lesson_18_2 {
+  umbrella header "Pods-HW_Lesson_18.2-umbrella.h"
+
+  export *
+  module * { export * }
+}
