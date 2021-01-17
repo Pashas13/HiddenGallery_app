@@ -84,11 +84,11 @@
                         <viewLayoutGuide key="safeArea" id="H9w-oN-gTf"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="f6r-ee-q94" firstAttribute="leading" secondItem="H9w-oN-gTf" secondAttribute="leading" constant="150" id="2YD-eg-sVK"/>
+                            <constraint firstItem="f6r-ee-q94" firstAttribute="leading" relation="lessThanOrEqual" secondItem="H9w-oN-gTf" secondAttribute="leading" constant="150" id="2YD-eg-sVK"/>
                             <constraint firstItem="H9w-oN-gTf" firstAttribute="bottom" secondItem="f6r-ee-q94" secondAttribute="bottom" constant="20" id="4VG-lL-nmV"/>
                             <constraint firstAttribute="trailing" secondItem="UMb-UC-aLu" secondAttribute="trailing" id="Csu-Pz-cCQ"/>
                             <constraint firstItem="UMb-UC-aLu" firstAttribute="top" secondItem="PvK-V5-ceU" secondAttribute="top" id="XZ7-KU-IVw"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" secondItem="f6r-ee-q94" secondAttribute="trailing" constant="150" id="p8V-lU-2c9"/>
+                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="f6r-ee-q94" secondAttribute="trailing" constant="150" id="p8V-lU-2c9"/>
                             <constraint firstAttribute="bottom" secondItem="UMb-UC-aLu" secondAttribute="bottom" id="pFZ-mr-lbx"/>
                             <constraint firstItem="UMb-UC-aLu" firstAttribute="leading" secondItem="PvK-V5-ceU" secondAttribute="leading" id="spR-t3-8ZL"/>
                         </constraints>

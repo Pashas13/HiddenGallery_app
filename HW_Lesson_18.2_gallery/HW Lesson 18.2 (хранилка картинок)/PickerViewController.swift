@@ -12,52 +12,43 @@ class PickerViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addPhotoButton: UIButton!
+    
     private let pickerController = UIImagePickerController()
-
     let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     let fileManager = FileManager.default
     lazy var imagesPath = documentsPath.appendingPathComponent("Images")
-
     var imagesArray = [UIImage]()
     var arrayOfNamed = [String]()
     var previousSelected: IndexPath?
     var currentSelected: Int?
     var numberOfImage = Int()
     
-    let userLogins = [String]()
-    var userLogin = UserDefaults.standard.value(forKey: "Login") as? String
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         collectionView.dataSource = self
         collectionView.delegate = self
+        addPhotoButton.alpha = 0.7
+        addPhotoButton.layer.cornerRadius = 10
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
 
-        if let login = userLogin {
+        if let login = UserDefaults.standard.value(forKey: "Login") as? String {
             let newPath = imagesPath.appendingPathComponent(login)
             try? fileManager.createDirectory(at: newPath, withIntermediateDirectories: true, attributes: nil)
             print(newPath)
             print("user \(login)")
-           
         } else {
             print ("error")
         }
-        addPhotoButton.alpha = 0.7
-        addPhotoButton.layer.cornerRadius = 10
-        imageCreation()
+        createImages()
         collectionView.reloadData()
-
     }
     
-    
-    func imageCreation() {
+    func createImages() {
         imagesArray.removeAll()
-        if let login = userLogin {
+        if let login = UserDefaults.standard.value(forKey: "Login") as? String {
             if let imageNames = try? fileManager.contentsOfDirectory(atPath: "\(imagesPath.path)/\(login)") {
                 for imageName in imageNames {
                     if let image = UIImage(contentsOfFile: "\(imagesPath.path)/\(login)/\(imageName)") {
@@ -94,7 +85,8 @@ extension PickerViewController: UIImagePickerControllerDelegate, UINavigationCon
             let imageName = "\(Date().timeIntervalSince1970).png"
             arrayOfNamed.append(imageName)
             
-            if userLogin != nil {
+            if UserDefaults.standard.value(forKey: "Login") as? String != nil {
+                let userLogin = UserDefaults.standard.value(forKey: "Login")
                 let folderPath = "\(imagesPath.path)/\(userLogin ?? "")"
                 if fileManager.createFile(atPath: "\(folderPath)/\(imageName)", contents: data, attributes: nil) {
                 } else {
@@ -133,11 +125,13 @@ extension PickerViewController: UICollectionViewDataSource,
        
         UserDefaults.standard.setValue(arrayOfNamed, forKey: "arrayOfNamedKey")
         UserDefaults.standard.setValue(numberOfImage, forKey: "numberOfImageKey")
-        let imagePath = "\(documentsPath.absoluteURL.absoluteString)Images/\(userLogin ?? "")/\(arrayOfNamed[numberOfImage])".replacingOccurrences(of: "file://", with: "")
-        UserDefaults.standard.setValue(imagePath, forKey: "imagePathKey")
         
+        if UserDefaults.standard.value(forKey: "Login") != nil {
+            let userLogin = UserDefaults.standard.value(forKey: "Login")
+            let imagePath = "\(documentsPath.absoluteURL.absoluteString)Images/\(userLogin ?? "")/\(arrayOfNamed[numberOfImage])".replacingOccurrences(of: "file://", with: "")
+            UserDefaults.standard.setValue(imagePath, forKey: "imagePathKey")
+        }
         selectedImageViewController.selectedImage = imagesArray[indexPath.item]
-        
         self.navigationController?.pushViewController(selectedImageViewController, animated: true)
 
     }
