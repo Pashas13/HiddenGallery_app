@@ -33,8 +33,11 @@ class PickerViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+
         if let login = userLogin {
             let newPath = imagesPath.appendingPathComponent(login)
             try? fileManager.createDirectory(at: newPath, withIntermediateDirectories: true, attributes: nil)
@@ -44,13 +47,8 @@ class PickerViewController: UIViewController {
         } else {
             print ("error")
         }
-        
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
-
-        addPhotoButton.layer.cornerRadius = 20
+        addPhotoButton.alpha = 0.7
+        addPhotoButton.layer.cornerRadius = 10
         imageCreation()
         collectionView.reloadData()
 

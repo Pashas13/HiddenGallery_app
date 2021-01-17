@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     private var passwordTextField: UITextField?
 
     let keychain = Keychain(service: "pavelKernoga.com.HW-Lesson-18-2")
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,20 +27,18 @@ class ViewController: UIViewController {
    }
     
     func openAuthorizationAlert() {
-        
-        let login = self.loginTextField?.text ?? ""
-        let password = self.passwordTextField?.text ?? ""
-        let keychainKey = KeychainKey<String>(key: login)
-        
+
         let alert = UIAlertController(title: "Sign In", message: "Enter your login and password", preferredStyle: .alert)
         
         let enterAction = UIAlertAction(title: "Enter", style: .default, handler: { (_) in
+            let keychainKey = KeychainKey<String>(key:self.loginTextField?.text ?? "")
+
             if (try? self.keychain.get(keychainKey)) != nil {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let pickerViewController = storyboard.instantiateViewController(identifier:
             String(describing: PickerViewController.self)) as PickerViewController
                 pickerViewController.modalPresentationStyle = .fullScreen
-                
+            
                 UserDefaults.standard.setValue(self.loginTextField?.text, forKey: "Login")
                 
                 self.navigationController?.pushViewController(pickerViewController, animated: true)
@@ -52,11 +50,14 @@ class ViewController: UIViewController {
         })
 
         let registrationAction = UIAlertAction(title: "Registration", style: .default, handler: { (_) in
+            let keychainKey = KeychainKey<String>(key: self.loginTextField?.text ?? "")
+            
             if (try? self.keychain.get(keychainKey)) != nil {
                 self.openErrorRegistrationAlert()
             } else {
+                let password = self.passwordTextField?.text ?? ""
                 try? self.keychain.set(password, for: keychainKey)
-                print("user saved")
+                print("user \(self.loginTextField?.text ?? "") saved")
                 self.openAuthorizationAlert()
             }
         })
@@ -76,48 +77,6 @@ class ViewController: UIViewController {
         alert.addAction(registrationAction)
         present(alert, animated: true, completion: nil)
     }
-
-//    func openSignInAlert() {
-//
-//        let login = self.loginTextField?.text ?? ""
-//        let password = self.passwordTextField?.text ?? ""
-//        let keychainKey = KeychainKey<String>(key: login)
-//
-//        let alert = UIAlertController(title: "Enter", message: "Enter your login and password", preferredStyle: .alert)
-//
-//        let enterAction = UIAlertAction(title: "Enter", style: .default, handler: { (_) in
-//            if (try? self.keychain.get(keychainKey)) != nil {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let pickerViewController = storyboard.instantiateViewController(identifier:
-//                String(describing: PickerViewController.self)) as PickerViewController
-//                pickerViewController.modalPresentationStyle = .fullScreen
-//
-//                UserDefaults.standard.setValue(self.loginTextField?.text, forKey: "Login")
-//
-//                self.navigationController?.pushViewController(pickerViewController, animated: true)
-//            } else {
-//                self.openErrorSignInAlert()
-//                return
-//            }
-//        })
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (_) in
-//            self.openAuthorizationAlert()
-//        }
-//        alert.addTextField { (login) in
-//            login.placeholder = "Login"
-//            self.loginTextField = login
-//        }
-//        alert.addTextField { (password) in
-//            password.placeholder = "Password"
-//            password.isSecureTextEntry = true
-//            self.passwordTextField = password
-//        }
-//
-//        alert.addAction(enterAction)
-//        alert.addAction(cancelAction)
-//        present(alert, animated: true, completion: nil)
-//    }
     
     func openErrorRegistrationAlert() {
         let alert = UIAlertController(title: "Error", message: "This login is already registered. Please, create a new login.", preferredStyle: .alert)

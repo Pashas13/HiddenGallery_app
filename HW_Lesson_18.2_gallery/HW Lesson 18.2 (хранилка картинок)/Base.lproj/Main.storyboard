@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gy8-Bf-ie5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gy8-Bf-ie5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -34,8 +34,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UMb-UC-aLu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EEf-NN-Dl9">
                                     <size key="itemSize" width="258" height="265"/>
                                     <size key="estimatedItemSize" width="258" height="265"/>
@@ -69,11 +69,12 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6r-ee-q94">
-                                <rect key="frame" x="100" y="812" width="214" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.98404247935214406" blue="0.87819869817070684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="150" y="802" width="114" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qnM-VW-3gW"/>
+                                    <constraint firstAttribute="height" constant="40" id="qnM-VW-3gW"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
                                     <action selector="addPhotoButtonTapped:" destination="wTG-Rw-p1y" eventType="touchUpInside" id="bAq-yC-BgX"/>
@@ -83,13 +84,13 @@
                         <viewLayoutGuide key="safeArea" id="H9w-oN-gTf"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="f6r-ee-q94" firstAttribute="leading" secondItem="H9w-oN-gTf" secondAttribute="leading" constant="100" id="2YD-eg-sVK"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="bottom" secondItem="f6r-ee-q94" secondAttribute="bottom" id="4VG-lL-nmV"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" secondItem="UMb-UC-aLu" secondAttribute="trailing" id="Csu-Pz-cCQ"/>
-                            <constraint firstItem="UMb-UC-aLu" firstAttribute="top" secondItem="H9w-oN-gTf" secondAttribute="top" id="XZ7-KU-IVw"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" secondItem="f6r-ee-q94" secondAttribute="trailing" constant="100" id="p8V-lU-2c9"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="bottom" secondItem="UMb-UC-aLu" secondAttribute="bottom" constant="50" id="pFZ-mr-lbx"/>
-                            <constraint firstItem="UMb-UC-aLu" firstAttribute="leading" secondItem="H9w-oN-gTf" secondAttribute="leading" id="spR-t3-8ZL"/>
+                            <constraint firstItem="f6r-ee-q94" firstAttribute="leading" secondItem="H9w-oN-gTf" secondAttribute="leading" constant="150" id="2YD-eg-sVK"/>
+                            <constraint firstItem="H9w-oN-gTf" firstAttribute="bottom" secondItem="f6r-ee-q94" secondAttribute="bottom" constant="20" id="4VG-lL-nmV"/>
+                            <constraint firstAttribute="trailing" secondItem="UMb-UC-aLu" secondAttribute="trailing" id="Csu-Pz-cCQ"/>
+                            <constraint firstItem="UMb-UC-aLu" firstAttribute="top" secondItem="PvK-V5-ceU" secondAttribute="top" id="XZ7-KU-IVw"/>
+                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" secondItem="f6r-ee-q94" secondAttribute="trailing" constant="150" id="p8V-lU-2c9"/>
+                            <constraint firstAttribute="bottom" secondItem="UMb-UC-aLu" secondAttribute="bottom" id="pFZ-mr-lbx"/>
+                            <constraint firstItem="UMb-UC-aLu" firstAttribute="leading" secondItem="PvK-V5-ceU" secondAttribute="leading" id="spR-t3-8ZL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -113,7 +114,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="748"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE8-DS-V84">
-                                <rect key="frame" x="374" y="820" width="20" height="47"/>
+                                <rect key="frame" x="364" y="820" width="20" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="W5u-zx-x6d"/>
                                 </constraints>
@@ -123,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-uD-i9B">
-                                <rect key="frame" x="20" y="820" width="20" height="37"/>
+                                <rect key="frame" x="30" y="820" width="20" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="xJC-jw-ZxA"/>
                                 </constraints>
@@ -140,9 +141,9 @@
                             <constraint firstItem="ens-3E-V2f" firstAttribute="leading" secondItem="Ddl-b3-ON9" secondAttribute="leading" id="6zl-V8-9ix"/>
                             <constraint firstItem="Ddl-b3-ON9" firstAttribute="bottom" secondItem="ens-3E-V2f" secondAttribute="bottom" constant="50" id="HbE-0k-eMN"/>
                             <constraint firstItem="pE8-DS-V84" firstAttribute="bottom" secondItem="Ddl-b3-ON9" secondAttribute="bottom" constant="5" id="TZ7-Zd-ZOS"/>
-                            <constraint firstItem="l3C-uD-i9B" firstAttribute="leading" secondItem="Ddl-b3-ON9" secondAttribute="leading" constant="20" id="VUJ-3Y-tyB"/>
+                            <constraint firstItem="l3C-uD-i9B" firstAttribute="leading" secondItem="Ddl-b3-ON9" secondAttribute="leading" constant="30" id="VUJ-3Y-tyB"/>
                             <constraint firstItem="pE8-DS-V84" firstAttribute="top" secondItem="ens-3E-V2f" secondAttribute="bottom" constant="8" symbolic="YES" id="f2M-PK-euL"/>
-                            <constraint firstItem="Ddl-b3-ON9" firstAttribute="trailing" secondItem="pE8-DS-V84" secondAttribute="trailing" constant="20" id="f2Y-Mb-IeU"/>
+                            <constraint firstItem="Ddl-b3-ON9" firstAttribute="trailing" secondItem="pE8-DS-V84" secondAttribute="trailing" constant="30" id="f2Y-Mb-IeU"/>
                             <constraint firstItem="l3C-uD-i9B" firstAttribute="top" secondItem="ens-3E-V2f" secondAttribute="bottom" constant="8" symbolic="YES" id="joG-Z4-dK4"/>
                             <constraint firstItem="Ddl-b3-ON9" firstAttribute="trailing" secondItem="ens-3E-V2f" secondAttribute="trailing" id="nUM-3d-vJQ"/>
                             <constraint firstItem="ens-3E-V2f" firstAttribute="top" secondItem="Ddl-b3-ON9" secondAttribute="top" constant="20" id="xYy-JK-Xwz"/>
@@ -178,6 +179,12 @@
         <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
