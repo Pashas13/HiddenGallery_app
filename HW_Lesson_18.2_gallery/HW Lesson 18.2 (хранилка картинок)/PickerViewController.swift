@@ -61,10 +61,43 @@ class PickerViewController: UIViewController {
     }
 
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
-        pickerController.sourceType = .photoLibrary
+        let alert = UIAlertController(title: "Add Photo", message: "Do you want to open camera or photo library?", preferredStyle: .alert)
+        let libraryAction = UIAlertAction(title: "Photo library", style: .default) { (_) in
+            self.pickPhoto()
+        }
+        let cameraActiom = UIAlertAction(title: "Camera", style: .default) { (_) in
+            self.pickCamera()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+       
+        alert.addAction(libraryAction)
+        alert.addAction(cameraActiom)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        
         pickerController.allowsEditing = true
         pickerController.delegate = self
-        present(pickerController, animated: true)
+    }
+    
+    func pickCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            self.pickerController.sourceType = .camera
+            self.present(pickerController, animated: true, completion: nil)
+        } else {
+            let errorAlert = UIAlertController(title: "Error", message: "This device does not support camera", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            errorAlert.addAction(okAction)
+            self.present(errorAlert, animated: true, completion: nil)
+        }
+    }
+    
+    func pickPhoto() {
+        self.pickerController.sourceType = .photoLibrary
+        self.present(pickerController, animated: true, completion: nil)
     }
 }
 
