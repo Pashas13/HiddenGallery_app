@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PickerViewController: UIViewController {
+class GalleryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -29,12 +29,20 @@ class PickerViewController: UIViewController {
         collectionView.delegate = self
         addPhotoButton.alpha = 0.7
         addPhotoButton.layer.cornerRadius = 10
+        pickerController.allowsEditing = true
+        pickerController.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-
-        if let login = UserDefaults.standard.value(forKey: "Login") as? String {
+        createDirectory()
+        createImages()
+        collectionView.reloadData()
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    func createDirectory() {
+        if let login = UserDefaults.standard.value(forKey: UserDefault.login.rawValue) as? String {
             let newPath = imagesPath.appendingPathComponent(login)
             try? fileManager.createDirectory(at: newPath, withIntermediateDirectories: true, attributes: nil)
             print(newPath)
@@ -42,8 +50,6 @@ class PickerViewController: UIViewController {
         } else {
             print ("error")
         }
-        createImages()
-        collectionView.reloadData()
     }
     
     func createImages() {
@@ -76,9 +82,6 @@ class PickerViewController: UIViewController {
         alert.addAction(cameraActiom)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
-        
-        pickerController.allowsEditing = true
-        pickerController.delegate = self
     }
     
     func pickCamera() {
@@ -101,7 +104,7 @@ class PickerViewController: UIViewController {
     }
 }
 
-extension PickerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
         info: [UIImagePickerController.InfoKey: Any]) {
 
@@ -132,7 +135,7 @@ extension PickerViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
-extension PickerViewController: UICollectionViewDataSource,
+extension GalleryViewController: UICollectionViewDataSource,
           UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagesArray.count

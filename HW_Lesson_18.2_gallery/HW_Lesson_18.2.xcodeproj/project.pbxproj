@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C435847825B4BB7A004D153C /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435847725B4BB7A004D153C /* UserDefaultKeys.swift */; };
+		C46848A325B594F800BC99E3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46848A225B594F800BC99E3 /* SignUpViewController.swift */; };
 		C48638312580DDA1001A0930 /* SelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48638302580DDA1001A0930 /* SelectedImageViewController.swift */; };
 		C4C510BC25653C5200C84586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C510BB25653C5200C84586 /* AppDelegate.swift */; };
 		C4C510BE25653C5200C84586 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C510BD25653C5200C84586 /* SceneDelegate.swift */; };
-		C4C510C025653C5200C84586 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C510BF25653C5200C84586 /* SignInViewController.swift */; };
+		C4C510C025653C5200C84586 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C510BF25653C5200C84586 /* LoginViewController.swift */; };
 		C4C510C325653C5200C84586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C510C125653C5200C84586 /* Main.storyboard */; };
 		C4C510C525653C5300C84586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C510C425653C5300C84586 /* Assets.xcassets */; };
 		C4C510C825653C5300C84586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C510C625653C5300C84586 /* LaunchScreen.storyboard */; };
-		C4C510D125653CE100C84586 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C510D025653CE100C84586 /* PickerViewController.swift */; };
+		C4C510D125653CE100C84586 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C510D025653CE100C84586 /* GalleryViewController.swift */; };
 		C4EA686B256C102C00DB8432 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EA686A256C102C00DB8432 /* ImageCollectionViewCell.swift */; };
 		DDDDA82996E576366A0CB1C7 /* Pods_HW_Lesson_18_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1446BA250970079FA9EA1E /* Pods_HW_Lesson_18_2.framework */; };
 /* End PBXBuildFile section */
@@ -25,16 +27,18 @@
 		3A71963BB56E6A9A47C4B306 /* Pods-HW Lesson 18.2 (хранилка картинок).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW Lesson 18.2 (хранилка картинок).release.xcconfig"; path = "Target Support Files/Pods-HW Lesson 18.2 (хранилка картинок)/Pods-HW Lesson 18.2 (хранилка картинок).release.xcconfig"; sourceTree = "<group>"; };
 		5EE184CB458D251440AFBB85 /* Pods-HW Lesson 18.2 (хранилка картинок).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW Lesson 18.2 (хранилка картинок).debug.xcconfig"; path = "Target Support Files/Pods-HW Lesson 18.2 (хранилка картинок)/Pods-HW Lesson 18.2 (хранилка картинок).debug.xcconfig"; sourceTree = "<group>"; };
 		6C167E584D719536882F8A2D /* Pods-HW_Lesson_18.2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW_Lesson_18.2.debug.xcconfig"; path = "Target Support Files/Pods-HW_Lesson_18.2/Pods-HW_Lesson_18.2.debug.xcconfig"; sourceTree = "<group>"; };
+		C435847725B4BB7A004D153C /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		C46848A225B594F800BC99E3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C48638302580DDA1001A0930 /* SelectedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageViewController.swift; sourceTree = "<group>"; };
 		C4C510B825653C5200C84586 /* HW_Lesson_18.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW_Lesson_18.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C510BB25653C5200C84586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C510BD25653C5200C84586 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C4C510BF25653C5200C84586 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C4C510BF25653C5200C84586 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C4C510C225653C5200C84586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4C510C425653C5300C84586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4C510C725653C5300C84586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4C510C925653C5300C84586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4C510D025653CE100C84586 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		C4C510D025653CE100C84586 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		C4EA686A256C102C00DB8432 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,9 +96,11 @@
 			children = (
 				C4C510BB25653C5200C84586 /* AppDelegate.swift */,
 				C4C510BD25653C5200C84586 /* SceneDelegate.swift */,
-				C4C510BF25653C5200C84586 /* SignInViewController.swift */,
-				C4C510D025653CE100C84586 /* PickerViewController.swift */,
+				C4C510BF25653C5200C84586 /* LoginViewController.swift */,
+				C46848A225B594F800BC99E3 /* SignUpViewController.swift */,
+				C4C510D025653CE100C84586 /* GalleryViewController.swift */,
 				C48638302580DDA1001A0930 /* SelectedImageViewController.swift */,
+				C435847725B4BB7A004D153C /* UserDefaultKeys.swift */,
 				C4EA686A256C102C00DB8432 /* ImageCollectionViewCell.swift */,
 				C4C510C125653C5200C84586 /* Main.storyboard */,
 				C4C510C425653C5300C84586 /* Assets.xcassets */,
@@ -236,11 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4C510C025653C5200C84586 /* SignInViewController.swift in Sources */,
+				C4C510C025653C5200C84586 /* LoginViewController.swift in Sources */,
 				C48638312580DDA1001A0930 /* SelectedImageViewController.swift in Sources */,
 				C4EA686B256C102C00DB8432 /* ImageCollectionViewCell.swift in Sources */,
 				C4C510BC25653C5200C84586 /* AppDelegate.swift in Sources */,
-				C4C510D125653CE100C84586 /* PickerViewController.swift in Sources */,
+				C4C510D125653CE100C84586 /* GalleryViewController.swift in Sources */,
+				C46848A325B594F800BC99E3 /* SignUpViewController.swift in Sources */,
+				C435847825B4BB7A004D153C /* UserDefaultKeys.swift in Sources */,
 				C4C510BE25653C5200C84586 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
