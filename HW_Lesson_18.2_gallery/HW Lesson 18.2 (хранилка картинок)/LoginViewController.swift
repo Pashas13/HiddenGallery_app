@@ -23,6 +23,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,9 +42,10 @@ class ViewController: UIViewController {
         loginTextField.text = ""
         passwordTextField.text = ""
    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         let keychainKey = KeychainKey<String>(key:self.loginTextField?.text ?? "")
-        if (try? self.keychain.get(keychainKey)) != nil {
+        if (try? self.keychain.get(keychainKey)) == self.passwordTextField?.text {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let galleryViewController = storyboard.instantiateViewController(identifier: String(describing: GalleryViewController.self)) as GalleryViewController
             galleryViewController.modalPresentationStyle = .fullScreen
@@ -71,5 +74,12 @@ class ViewController: UIViewController {
         })
         alert.addAction(enterAction)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

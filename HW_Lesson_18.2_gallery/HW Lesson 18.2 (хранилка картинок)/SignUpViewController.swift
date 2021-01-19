@@ -24,9 +24,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPassTextField.delegate = self
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -52,7 +53,7 @@ class SignUpViewController: UIViewController {
                 self.openSuccessfulSignUpAlert()
             }
         } else {
-            openErrorEntryPassword()
+            openErrorConfirmPassword()
         }
     }
     
@@ -60,7 +61,7 @@ class SignUpViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func openErrorEntryPassword() {
+    func openErrorConfirmPassword() {
         let alert = UIAlertController(title: "Error", message: "Check the entered password", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             alert.dismiss(animated: true, completion: nil)
@@ -68,7 +69,6 @@ class SignUpViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-    
     
     func openErrorRegistrationAlert() {
         let alert = UIAlertController(title: "Error", message: "This login is already registered. Please, create a new login.", preferredStyle: .alert)
@@ -87,6 +87,11 @@ class SignUpViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-    
+}
 
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

@@ -30,7 +30,7 @@
                                 <rect key="frame" x="30" y="340.5" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed8-Ln-ykK">
                                 <rect key="frame" x="30" y="304" width="52.5" height="26.5"/>
@@ -314,11 +314,8 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6r-ee-q94">
-                                <rect key="frame" x="150" y="802" width="114" height="40"/>
+                                <rect key="frame" x="120" y="781" width="174" height="36"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="qnM-VW-3gW"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
@@ -329,13 +326,14 @@
                         <viewLayoutGuide key="safeArea" id="H9w-oN-gTf"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="f6r-ee-q94" firstAttribute="leading" relation="lessThanOrEqual" secondItem="H9w-oN-gTf" secondAttribute="leading" constant="150" id="2YD-eg-sVK"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="bottom" secondItem="f6r-ee-q94" secondAttribute="bottom" constant="20" id="4VG-lL-nmV"/>
                             <constraint firstAttribute="trailing" secondItem="UMb-UC-aLu" secondAttribute="trailing" id="Csu-Pz-cCQ"/>
                             <constraint firstItem="UMb-UC-aLu" firstAttribute="top" secondItem="PvK-V5-ceU" secondAttribute="top" id="XZ7-KU-IVw"/>
-                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="f6r-ee-q94" secondAttribute="trailing" constant="150" id="p8V-lU-2c9"/>
+                            <constraint firstItem="H9w-oN-gTf" firstAttribute="bottom" secondItem="f6r-ee-q94" secondAttribute="bottom" constant="45" id="boB-QQ-MzY"/>
+                            <constraint firstItem="H9w-oN-gTf" firstAttribute="trailing" secondItem="f6r-ee-q94" secondAttribute="trailing" constant="120" id="gtG-OJ-pB0"/>
+                            <constraint firstItem="f6r-ee-q94" firstAttribute="leading" secondItem="H9w-oN-gTf" secondAttribute="leading" constant="120" id="huC-ZK-e7C"/>
                             <constraint firstAttribute="bottom" secondItem="UMb-UC-aLu" secondAttribute="bottom" id="pFZ-mr-lbx"/>
                             <constraint firstItem="UMb-UC-aLu" firstAttribute="leading" secondItem="PvK-V5-ceU" secondAttribute="leading" id="spR-t3-8ZL"/>
+                            <constraint firstItem="f6r-ee-q94" firstAttribute="centerX" secondItem="PvK-V5-ceU" secondAttribute="centerX" id="y11-Hw-uI2"/>
                         </constraints>
                     </view>
                     <connections>
