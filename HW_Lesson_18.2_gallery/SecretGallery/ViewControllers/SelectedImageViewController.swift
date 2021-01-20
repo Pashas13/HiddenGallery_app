@@ -10,10 +10,16 @@ import UIKit
 
 class SelectedImageViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var selectedImageView: UIImageView!
 
+    // MARK: - Public properties
+    
     var selectedImage = UIImage()
 
+    // MARK: - Lifestyle functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,13 +27,14 @@ class SelectedImageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         selectedImageView.image = selectedImage
     }
+    
+    // MARK: - IBActions
 
     @IBAction func deleteButtonTapped(_ sender: Any) {
 
         if let imagePath = UserDefaults.standard.value(forKey: "imagePathKey") as? String {
             
             let deleteAlert = UIAlertController(title: "Delete photo", message: "Are you sure? Do you want to delete this photo?", preferredStyle: .alert)
-            
             let deleteAction = UIAlertAction(title: "DELETE", style: .destructive) { (_) in
                 self.navigationController?.popViewController(animated: true)
                 if FileManager.default.fileExists(atPath: imagePath) {
@@ -57,4 +64,5 @@ class SelectedImageViewController: UIViewController {
             }
         }
     }
+    
 }

@@ -11,6 +11,8 @@ import SwiftyKeychainKit
 
 class SignUpViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backButtonBackgroundView: UIView!
     @IBOutlet weak var backButton: UIButton!
@@ -20,7 +22,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPassTextField: UITextField!
     
+    // MARK: - Public Properties
+    
     let keychain = Keychain(service: "pavelKernoga.com.HW-Lesson-18-2")
+    
+    // MARK: - Lifestyle functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +47,8 @@ class SignUpViewController: UIViewController {
         confirmPassTextField.isSecureTextEntry = true
     }
     
+    // MARK: - IBAtions
+    
     @IBAction func signUpButtonTapped(_ sender: Any) {
         let keychainKey = KeychainKey<String>(key: self.loginTextField?.text ?? "")
         if self.passwordTextField?.text == self.confirmPassTextField?.text {
@@ -60,6 +68,8 @@ class SignUpViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - Flow functions
     
     func openErrorConfirmPassword() {
         let alert = UIAlertController(title: "Error", message: "Check the entered password", preferredStyle: .alert)
@@ -87,7 +97,10 @@ class SignUpViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
+    
 }
+
+    // MARK: - Extension UITextField
 
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

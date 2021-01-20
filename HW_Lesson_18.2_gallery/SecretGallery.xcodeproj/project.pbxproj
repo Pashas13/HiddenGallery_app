@@ -30,7 +30,7 @@
 		C435847725B4BB7A004D153C /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		C46848A225B594F800BC99E3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C48638302580DDA1001A0930 /* SelectedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageViewController.swift; sourceTree = "<group>"; };
-		C4C510B825653C5200C84586 /* HW_Lesson_18.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW_Lesson_18.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C510B825653C5200C84586 /* SecretGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C510BB25653C5200C84586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C510BD25653C5200C84586 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C4C510BF25653C5200C84586 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -73,10 +73,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C4147FE125B8D6080060B9AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4C510BF25653C5200C84586 /* LoginViewController.swift */,
+				C46848A225B594F800BC99E3 /* SignUpViewController.swift */,
+				C4C510D025653CE100C84586 /* GalleryViewController.swift */,
+				C48638302580DDA1001A0930 /* SelectedImageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C4147FE225B8D63F0060B9AB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C4EA686A256C102C00DB8432 /* ImageCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C4C510AF25653C5200C84586 = {
 			isa = PBXGroup;
 			children = (
-				C4C510BA25653C5200C84586 /* HW Lesson 18.2 (хранилка картинок) */,
+				C4C510BA25653C5200C84586 /* SecretGallery */,
 				C4C510B925653C5200C84586 /* Products */,
 				A438C7294A2FCB910176A37B /* Pods */,
 				69D81A1C56B57C60415A7B0E /* Frameworks */,
@@ -86,36 +105,33 @@
 		C4C510B925653C5200C84586 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4C510B825653C5200C84586 /* HW_Lesson_18.2.app */,
+				C4C510B825653C5200C84586 /* SecretGallery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C4C510BA25653C5200C84586 /* HW Lesson 18.2 (хранилка картинок) */ = {
+		C4C510BA25653C5200C84586 /* SecretGallery */ = {
 			isa = PBXGroup;
 			children = (
+				C4147FE125B8D6080060B9AB /* ViewControllers */,
+				C4147FE225B8D63F0060B9AB /* Cells */,
 				C4C510BB25653C5200C84586 /* AppDelegate.swift */,
 				C4C510BD25653C5200C84586 /* SceneDelegate.swift */,
-				C4C510BF25653C5200C84586 /* LoginViewController.swift */,
-				C46848A225B594F800BC99E3 /* SignUpViewController.swift */,
-				C4C510D025653CE100C84586 /* GalleryViewController.swift */,
-				C48638302580DDA1001A0930 /* SelectedImageViewController.swift */,
 				C435847725B4BB7A004D153C /* UserDefaultKeys.swift */,
-				C4EA686A256C102C00DB8432 /* ImageCollectionViewCell.swift */,
 				C4C510C125653C5200C84586 /* Main.storyboard */,
 				C4C510C425653C5300C84586 /* Assets.xcassets */,
 				C4C510C625653C5300C84586 /* LaunchScreen.storyboard */,
 				C4C510C925653C5300C84586 /* Info.plist */,
 			);
-			path = "HW Lesson 18.2 (хранилка картинок)";
+			path = SecretGallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C4C510B725653C5200C84586 /* HW_Lesson_18.2 */ = {
+		C4C510B725653C5200C84586 /* SecretGallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C4C510CC25653C5300C84586 /* Build configuration list for PBXNativeTarget "HW_Lesson_18.2" */;
+			buildConfigurationList = C4C510CC25653C5300C84586 /* Build configuration list for PBXNativeTarget "SecretGallery" */;
 			buildPhases = (
 				B71F774B99DA776C526CBBFE /* [CP] Check Pods Manifest.lock */,
 				C4EFE65D2587C81B004CB698 /* ShellScript */,
@@ -128,9 +144,9 @@
 			);
 			dependencies = (
 			);
-			name = HW_Lesson_18.2;
+			name = SecretGallery;
 			productName = "HW Lesson 18.2 (хранилка картинок)";
-			productReference = C4C510B825653C5200C84586 /* HW_Lesson_18.2.app */;
+			productReference = C4C510B825653C5200C84586 /* SecretGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +163,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C4C510B325653C5200C84586 /* Build configuration list for PBXProject "HW_Lesson_18.2" */;
+			buildConfigurationList = C4C510B325653C5200C84586 /* Build configuration list for PBXProject "SecretGallery" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -160,7 +176,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C4C510B725653C5200C84586 /* HW_Lesson_18.2 */,
+				C4C510B725653C5200C84586 /* SecretGallery */,
 			);
 		};
 /* End PBXProject section */
@@ -399,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94KK2872Q5;
-				INFOPLIST_FILE = "HW Lesson 18.2 (хранилка картинок)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SecretGallery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94KK2872Q5;
-				INFOPLIST_FILE = "HW Lesson 18.2 (хранилка картинок)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SecretGallery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,7 +450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C4C510B325653C5200C84586 /* Build configuration list for PBXProject "HW_Lesson_18.2" */ = {
+		C4C510B325653C5200C84586 /* Build configuration list for PBXProject "SecretGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4C510CA25653C5300C84586 /* Debug */,
@@ -443,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4C510CC25653C5300C84586 /* Build configuration list for PBXNativeTarget "HW_Lesson_18.2" */ = {
+		C4C510CC25653C5300C84586 /* Build configuration list for PBXNativeTarget "SecretGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4C510CD25653C5300C84586 /* Debug */,

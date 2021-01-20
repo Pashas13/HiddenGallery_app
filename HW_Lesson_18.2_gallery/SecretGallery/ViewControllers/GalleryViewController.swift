@@ -10,8 +10,12 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addPhotoButton: UIButton!
+    
+    // MARK: - Public properties
     
     private let pickerController = UIImagePickerController()
     let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -22,6 +26,8 @@ class GalleryViewController: UIViewController {
     var previousSelected: IndexPath?
     var currentSelected: Int?
     var numberOfImage = Int()
+    
+    // MARK: - Lifestyle functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,28 @@ class GalleryViewController: UIViewController {
         collectionView.reloadData()
         navigationController?.navigationBar.isHidden = false
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func addPhotoButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Photo", message: "Do you want to open camera or photo library?", preferredStyle: .alert)
+        let libraryAction = UIAlertAction(title: "Photo library", style: .default) { (_) in
+            self.pickPhoto()
+        }
+        let cameraActiom = UIAlertAction(title: "Camera", style: .default) { (_) in
+            self.pickCamera()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+       
+        alert.addAction(libraryAction)
+        alert.addAction(cameraActiom)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Flow functions
     
     func createDirectory() {
         if let login = UserDefaults.standard.value(forKey: UserDefault.login.rawValue) as? String {
@@ -65,24 +93,6 @@ class GalleryViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func addPhotoButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Add Photo", message: "Do you want to open camera or photo library?", preferredStyle: .alert)
-        let libraryAction = UIAlertAction(title: "Photo library", style: .default) { (_) in
-            self.pickPhoto()
-        }
-        let cameraActiom = UIAlertAction(title: "Camera", style: .default) { (_) in
-            self.pickCamera()
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
-            self.dismiss(animated: true, completion: nil)
-        }
-       
-        alert.addAction(libraryAction)
-        alert.addAction(cameraActiom)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
     
     func pickCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
@@ -102,7 +112,10 @@ class GalleryViewController: UIViewController {
         self.pickerController.sourceType = .photoLibrary
         self.present(pickerController, animated: true, completion: nil)
     }
+    
 }
+
+    // MARK: - Extension UIImagePickerController
 
 extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
@@ -134,6 +147,8 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
         collectionView.reloadData()
     }
 }
+
+    // MARK: - Extension UICollectionView
 
 extension GalleryViewController: UICollectionViewDataSource,
           UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HW_Lesson_18.2.xcodeproj">
+      location = "group:/Users/pasha/HiddenGallery_app/HW_Lesson_18.2_gallery/SecretGallery.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
